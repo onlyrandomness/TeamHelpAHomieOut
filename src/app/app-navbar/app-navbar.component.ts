@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
+//import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-navbar',
@@ -8,24 +8,25 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AppNavbarComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor() {}
+//  constructor(private http: HttpClient) {}
 
   ngOnInit() {
   }
-  
-  onSubmit(e) {
-    e.preventDefault();
-    
-    let opts = {
-      headers: new HttpHeaders({
-        'Authorization': 'Bearer YELP_API_TOKEN_HERE'
-      })
-    }
-    
-    this.http.get('YELP_URL', opts).subscribe(
-        res => console.log(res)
-    )
-    
-  }
+
+//  onSubmit(e) {
+//    e.preventDefault();
+//
+//    const opts = {
+//      headers: new HttpHeaders({
+//        'Authorization': 'Bearer YELP_API_TOKEN_HERE'
+//      })
+//    };
+//
+//    this.http.get('YELP_URL', opts).subscribe(
+//      res => console.log(res)
+//    );
+//
+//  }
 
 }
