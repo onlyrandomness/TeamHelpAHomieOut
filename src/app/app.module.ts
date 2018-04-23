@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { CoursesListComponent } from './courses-list/courses-list.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MainPageComponent } from './main-page/main-page.component';
     AppNavbarComponent,
     CoursesListComponent,
     CreateAccountComponent,
-    MainPageComponent
+    MainPageComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
