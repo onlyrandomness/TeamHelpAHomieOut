@@ -11,13 +11,15 @@ import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 
 import { AppComponent } from './app.component';
 import { CoursesListComponent } from './courses-list/courses-list.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavbarComponent,
-    CoursesListComponent
+    CoursesListComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,
