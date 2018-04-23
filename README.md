@@ -40,3 +40,6 @@ The main page is where the user is sent after the login process. There the user 
 ## User Profile Page
 
 The user profile page will be able to be access through the main page of the application. Once there, the user will be given the option to alter some of the information stored for them in the database.
+
+## Yelp API TOKEN
+Och20lKS23t1op8Bd1hr8ZZ73rBz2xJGCcpoEZKcmFGFb_g93igmMOjVaHr4_hOnpdgAgHSrE8bx7807RZX5zo0rx-Ie1chtVxg0Ry5kgaPjWiTOxmCjaxzazVXdWnYx
