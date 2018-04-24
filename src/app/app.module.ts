@@ -5,19 +5,24 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 
 
 import { AppComponent } from './app.component';
-import { CoursesListComponent } from './courses-list/courses-list.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavbarComponent,
-    CoursesListComponent
+    CreateAccountComponent,
+    MainPageComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
