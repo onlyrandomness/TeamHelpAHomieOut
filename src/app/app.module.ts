@@ -11,20 +11,26 @@ import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 
 import { AppComponent } from './app.component';
 import { CoursesListComponent } from './courses-list/courses-list.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavbarComponent,
-    CoursesListComponent
+    CoursesListComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AgmCoreModule.forRoot({
+    apiKey: 'AIzaSyCpfxNKKJH4rzm-aePiAWQZtgCfrEFtd5Q'
+    })
     //AppNavbarComponent
   ],
   providers: [],

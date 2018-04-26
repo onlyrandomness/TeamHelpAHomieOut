@@ -5,7 +5,7 @@ export const environment = {
     authDomain: 'helpahomieout-9414f.firebaseapp.com',
     databaseURL: 'https://helpahomieout-9414f.firebaseio.com',
     projectId: 'helpahomieout-9414f',
-    storageBucket: '',
+    storageBucket: 'helpahomieout-9414f.appspot.com',
     messagingSenderId: '466897444830'
   }
 };
