@@ -1,8 +1,11 @@
 <app-navbar></app-navbar> 
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="12"></agm-map>
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="12">
+</agm-map>
 <div class="container">
     <div class="starter-template">
-        <app-main-page></app-main-page>   
+        <app-main-page></app-main-page>
     </div>
-    <app-courses-list></app-courses-list>
 </div>
+<footer>
+    <app-courses-list></app-courses-list>
+</footer>
