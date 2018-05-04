@@ -14,7 +14,14 @@ import { AppComponent } from './app.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
+const appRoutes: Routes = [
+  {path: '', component: MainPageComponent},
+  {path: 'createaccount', component: CreateAccountComponent},
+  {path: 'profile', component: ProfilePageComponent}
+];
 
 @NgModule({
   declarations: [
@@ -29,8 +36,13 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    RouterModule,
     //AppNavbarComponent
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
