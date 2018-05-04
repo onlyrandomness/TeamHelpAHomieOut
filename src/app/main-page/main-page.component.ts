@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
+  apiSpace: string = "<b>Some html.</b>";
+  
   ngOnInit() {
   }
 
+  
+  
+  onSubmit(e) {
+    event.preventDefault();
+    this.apiSpace = "<table style='width:100%'><tr><th>Example Data</th><th>Example Text</th></tr><tr><td>Data</td><td>Text</td></tr></table>";
+  }
+  
+  
 }
