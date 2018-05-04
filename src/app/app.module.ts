@@ -16,11 +16,13 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainPageComponent},
   {path: 'createaccount', component: CreateAccountComponent},
-  {path: 'profile', component: ProfilePageComponent}
+  {path: 'profile', component: ProfilePageComponent},
+  {path: 'login', component: LoginPageComponent}
 ];
 
 @NgModule({
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     AppNavbarComponent,
     CreateAccountComponent,
     MainPageComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
