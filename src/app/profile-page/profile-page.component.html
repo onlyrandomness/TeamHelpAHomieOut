@@ -6,13 +6,13 @@
 		
 		<ul>
     		<div *ngFor="let users of profileObservable | async">
-        		<!-- <ngb-alert type="info" [dismissible]="false"> -->
+        		<ngb-alert type="info" [dismissible]="false">
             		<h3>Username: {{users.name}}</h3>
             		<p><img src="{{users.idUrl}}" style="width:100px;height:100px;"></p>
             		<p>Favorite Foods: {{users.favfoods}}</p>
             		<p>Email: {{users.email}}</p> 
             		<p>Password: {{users.password}}</p>
-        		<!-- </ngb-alert>  -->
+        		</ngb-alert>
     		</div>
 		</ul>
 		
