@@ -41,6 +41,7 @@ const appRoutes: Routes = [
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule,
+    HttpClientModule,
     //AppNavbarComponent
     RouterModule.forRoot(
       appRoutes,

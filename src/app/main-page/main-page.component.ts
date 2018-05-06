@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-main-page',
@@ -8,18 +9,29 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  apiSpace = '<b>Some html.</b>';
-
+  resturants = []
+  
   ngOnInit() {
   }
 
   onSubmit(e) {
     event.preventDefault();
-    this.apiSpace = '<table style=\'width:100%\'>' +
-      '<tr><th>Example Data</th><th>Example Text</th></tr>' +
-      '<tr><td>Data</td><td>Text</td></tr></table>';
+
+    const opts = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer YELP_API_TOKEN_HERE'
+      })
+    };
+
+    this.http.get(environment.yelpApi.urlBase, opts).subscribe(
+      res =>
+        // {
+        console.log(res)
+      // this.resturants = res;
+      // }
+    );
   }
 
 }
