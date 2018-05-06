@@ -1,29 +1,30 @@
 <app-navbar></app-navbar>
 <div class="container">
-	<div class="starter-template">
-		<h1>Help A Homie Out</h1>
-		<h3>Profile Page</h3>
-		
-		<ul>
-    		<div *ngFor="let users of profileObservable | async">
-        		<ngb-alert type="info" [dismissible]="false">
-            		<h3>Username: {{users.name}}</h3>
-            		<p><img src="{{users.idUrl}}" style="width:100px;height:100px;"></p>
-            		<p>Favorite Foods: {{users.favfoods}}</p>
-            		<p>Email: {{users.email}}</p> 
-            		<p>Password: {{users.password}}</p>
-        		</ngb-alert>
-    		</div>
-		</ul>
-		
-		<form action="/action_page.php">
-			Old Password: <input type="password" name="oldPassword">
-			<br>
-			New Password: <input type="password" name="newPassword">
-			<br>
-			Confirm Password: <input type="password" name="confirmPassword">
-			<br> 
-			<input type="submit" value="Change Password">
-		</form>
-	</div>
+    <div class="starter-template">
+        <h1>Help A Homie Out</h1>
+        <h3>Profile Page</h3>
+        
+        <ul>
+            <!-- <div *ngFor="let users of profileObservable | async"> -->
+            <div>
+                <ngb-alert type="info" [dismissible]="false">
+                    <h3>Username: {{user.name}}</h3>
+                    <p><img src="{{user.idUrl}}" style="width:100px;height:100px;"></p>
+                    <p>Favorite Foods: {{user.favFoods}}</p>
+                    <p>Email: {{user.email}}</p> 
+                    <p>Password: {{user.password}}</p>
+                </ngb-alert>
+            </div>
+        </ul>
+        
+        <!-- <form action="/action_page.php">
+            Old Password: <input type="password" name="oldPassword">
+            <br>
+            New Password: <input type="password" name="newPassword">
+            <br>
+            Confirm Password: <input type="password" name="confirmPassword">
+            <br> 
+            <input type="submit" value="Change Password">
+        </form> -->
+    </div>
 </div>
