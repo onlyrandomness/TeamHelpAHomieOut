@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DataService} from '../services/data.service';
 
 @Component({
   selector: 'app-login-page',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  userID = [];
+
+  constructor(private _data: DataService) {}
 
   ngOnInit() {
+    this._data.currentUser.subscribe(res => this.userID = res);
+    this._data.changeCurrentUser(this.userID);
   }
 
 }
