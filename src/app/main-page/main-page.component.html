@@ -6,11 +6,17 @@
 		<p class="lead">The only food search site that caters to poor,
 			hungry, college students.</p>
 
-		<form class="form-inline my-2 my-lg-0 floatright">
-			<input class="form-control mr-sm-2" type="text" placeholder="Search"
-				aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		</form>
+		<form (submit)="onSubmit($event)" class="form-inline my-2 my-lg-0">
+        	<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    	</form>
+    	
+    	<div class="apiOutput">
+    		<div *ngFor="let resturant of resturants">
+    			<p>{{resturant.name}}</p>
+    		</div>
+    	</div>
+    	
 	</div>
 	<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=food&key=AIzaSyAunszbf5Rn7Gv9XyIPXAvTKnszK9NGLys" allowfullscreen></iframe>
 </div>

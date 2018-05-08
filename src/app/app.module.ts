@@ -17,6 +17,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { DataService } from './services/data.service';
 
 const appRoutes: Routes = [
   {path: '', component: MainPageComponent},
@@ -41,13 +42,14 @@ const appRoutes: Routes = [
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule,
+    HttpClientModule,
     //AppNavbarComponent
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

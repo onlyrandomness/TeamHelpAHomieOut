@@ -4,8 +4,10 @@
 		<h1>Help A Homie Out</h1>
 
 		<h3>Login</h3>
-
-		<form action="/action_page.php">
+		
+		<p>{{userID[0]}}</p>
+		
+		<form (submit)="onSubmit($event)" action="/action_page.php">
 			Username: <input type="text" name="username">
 			<br>
 			Password: <input type="password" name="password">
