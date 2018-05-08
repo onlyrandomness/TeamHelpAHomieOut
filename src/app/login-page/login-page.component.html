@@ -7,7 +7,7 @@
 		
 		<p>{{userID[0]}}</p>
 		
-		<form action="/action_page.php">
+		<form (submit)="onSubmit($event)" action="/action_page.php">
 			Username: <input type="text" name="username">
 			<br>
 			Password: <input type="password" name="password">

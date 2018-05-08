@@ -17,4 +17,9 @@ export class LoginPageComponent implements OnInit {
     this._data.changeCurrentUser(this.userID);
   }
 
+  onSubmit(e) {
+    e.preventDefault();
+    //Login SubmitButton
+  }
+
 }
