@@ -18,6 +18,7 @@ import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { DataService } from './services/data.service';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: '', component: MainPageComponent},
@@ -43,6 +44,7 @@ const appRoutes: Routes = [
     NgbModule.forRoot(),
     RouterModule,
     HttpClientModule,
+    FormsModule,
     //AppNavbarComponent
     RouterModule.forRoot(
       appRoutes,

@@ -26,7 +26,6 @@ export class ProfilePageComponent implements OnInit {
     this._data.changeCurrentUser(this.userID);
     
     this.getProfile('/users/' + this.userID[0]).subscribe( x => {
-      console.log(x)
       this.user.name = x.name
       this.user.email = x.email
       this.user.favFoods = x.favfoods

@@ -4,15 +4,20 @@
 		<h1>Help A Homie Out</h1>
 
 		<h3>Login</h3>
-		
+
 		<p>{{userID[0]}}</p>
-		
-		<form (submit)="onSubmit($event)" action="/action_page.php">
-			Username: <input type="text" name="username">
-			<br>
-			Password: <input type="password" name="password">
-			<br> 
-			<input type="submit" value="Login">
+
+		<form #f="ngForm" (ngSubmit)="onSubmit(f.value)" class="ui form">
+
+			<div class="field">
+				<label for="usernameInput">User Name: </label>
+				<input type="text" id="usernameInput" placeholder="User" name="username" ngModel>
+				<br>
+				<label for="usernameInput">Password: </label>
+				<input type="password" id="passwordInput" name="password" ngModel>
+			</div>
+
+			<button type="submit" class="ui button">Submit</button>
 		</form>
 	</div>
 </div>
