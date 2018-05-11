@@ -5,8 +5,6 @@
 
 		<h3>Login</h3>
 
-		<p>{{userID[0]}}</p>
-
 		<form #f="ngForm" (ngSubmit)="onSubmit(f.value)" class="ui form">
 
 			<div class="field">
@@ -16,7 +14,7 @@
 				<label for="usernameInput">Password: </label>
 				<input type="password" id="passwordInput" name="password" ngModel>
 			</div>
-
+			<div [innerHtml]="htmlVariable"></div>
 			<button type="submit" class="ui button">Submit</button>
 		</form>
 	</div>

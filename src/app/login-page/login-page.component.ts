@@ -3,6 +3,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
 import {DataService} from '../services/data.service';
 import {FormControl} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -10,6 +11,8 @@ import {FormControl} from '@angular/forms';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+
+  htmlVariable: string = '';
 
   user = {
     name: null,
@@ -21,7 +24,7 @@ export class LoginPageComponent implements OnInit {
 
   userID = [];
 
-  constructor(private db: AngularFireDatabase, private _data: DataService) {}
+  constructor(private db: AngularFireDatabase, private _data: DataService, private router: Router) {}
 
   ngOnInit() {
     this._data.currentUser.subscribe(res => this.userID = res);
@@ -46,10 +49,14 @@ export class LoginPageComponent implements OnInit {
       this.user.password = x.password
     })
 
-    if (form.password == this.user.password) {
+    if (form.password === this.user.password) {
       console.log('Password is the same.')
+      // Change service Variable
+      this.router.navigate(['/']);
     } else {
       console.log('Password is NOT the same.')
+      this.htmlVariable = '<font color="red">Wrong username or password'
+        + '<p><b>BUG: If this is your first attempt, hit sumbit again.</b></font>';
     }
   }
 }
