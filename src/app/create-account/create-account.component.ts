@@ -1,5 +1,6 @@
-import { DataService } from '../services/data.service';
+import {DataService} from '../services/data.service';
 import {Component, OnInit} from '@angular/core';
+import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 
 @Component({
   selector: 'app-create-account',
@@ -8,10 +9,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CreateAccountComponent implements OnInit {
 
-  constructor(private _data: DataService) {}
+  constructor(private _data: DataService, db: AngularFireDatabase) {}
 
   ngOnInit() {
+  }
 
+  onSubmit(form: any): void {
   }
 
 }
