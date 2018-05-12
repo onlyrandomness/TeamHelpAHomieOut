@@ -52,6 +52,8 @@ export class LoginPageComponent implements OnInit {
     if (form.password === this.user.password) {
       console.log('Password is the same.')
       // Change service Variable
+      this.userID = [form.username]
+      this._data.changeCurrentUser(this.userID);
       this.router.navigate(['/']);
     } else {
       console.log('Password is NOT the same.')

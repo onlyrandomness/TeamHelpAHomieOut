@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-create-account',
@@ -7,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateAccountComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _data: DataService) {}
 
   ngOnInit() {
-    
+
   }
-   
+
 }

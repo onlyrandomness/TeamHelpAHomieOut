@@ -5,7 +5,8 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 export class DataService {
 
-  private userID = new BehaviorSubject<any>(['Admin']);
+  // private userID = new BehaviorSubject<any>(['Admin']);
+  private userID = new BehaviorSubject<any>([]);
   currentUser = this.userID.asObservable();
 
   constructor() {}
