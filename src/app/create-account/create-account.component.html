@@ -4,7 +4,7 @@
 		<h1>Help A Homie Out</h1>
 
 		<h3>Create Account</h3>
-		<form action="/action_page.php">
+		<form #f="ngForm" (ngSubmit)="writeUserData()" class="ui form">
 			Username: <input type="text" name="username">
 			<br>
 			Name: <input type="text" name="name">
@@ -19,7 +19,7 @@
 			<br> 
 			Confirm Password: <input type="password" name="password2">
 			<br>
-			<input type="submit" value="Create">
+			<button type="submit" class="ui button">Create</button>
 		</form>
 	</div>
 </div>
