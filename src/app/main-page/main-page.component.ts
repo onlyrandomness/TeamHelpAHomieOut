@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { environment } from '../../environments/environment';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-main-page',
@@ -11,8 +11,8 @@ export class MainPageComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
-  resturants = []
-  
+  resturants = [];
+
   ngOnInit() {
   }
 
