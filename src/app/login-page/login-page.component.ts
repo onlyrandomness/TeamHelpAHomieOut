@@ -36,27 +36,19 @@ export class LoginPageComponent implements OnInit {
   }
 
   onSubmit(form: any): void {
-
-    console.log('submitted username value:', form.username);
-    console.log('submitted password value:', form.password);
-
     this.getProfile('/users/' + form.username).subscribe(x => {
-      console.log(x)
-      this.user.name = x.name
-      this.user.email = x.email
-      this.user.favFoods = x.favfoods
-      this.user.idUrl = x.idUrl
-      this.user.password = x.password
+      this.user.name = x.name;
+      this.user.email = x.email;
+      this.user.favFoods = x.favfoods;
+      this.user.idUrl = x.idUrl;
+      this.user.password = x.password;
     })
 
     if (form.password === this.user.password) {
-      console.log('Password is the same.')
-      // Change service Variable
       this.userID = [form.username]
       this._data.changeCurrentUser(this.userID);
       this.router.navigate(['/']);
     } else {
-      console.log('Password is NOT the same.')
       this.htmlVariable = '<font color="red">Wrong username or password'
         + '<p><b>BUG: If this is your first attempt, hit sumbit again.</b></font>';
     }

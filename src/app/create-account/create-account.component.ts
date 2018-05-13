@@ -2,6 +2,8 @@ import {DataService} from '../services/data.service';
 import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {FormControl} from '@angular/forms';
+import { Router } from '@angular/router';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-create-account',
@@ -10,13 +12,24 @@ import {FormControl} from '@angular/forms';
 })
 export class CreateAccountComponent implements OnInit {
 
-  constructor(private _data: DataService, private db: AngularFireDatabase) {}
+  userID = [];
+
+  constructor(private _data: DataService, private db: AngularFireDatabase, private router: Router) {}
 
   ngOnInit() {
+    this._data.currentUser.subscribe(res => this.userID = res);
+    this._data.changeCurrentUser(this.userID);
+  }
+
+  getProfile(listPath): Observable<any> {
+    return this.db.object(listPath).valueChanges();
   }
 
   onSubmit(form: any): void {
-    let firebase = this.db.database.ref('users/' + form.username);
+    const firebase = this.db.database.ref('users/' + form.username);
+    const newUser = [form.username];
+    const tempData = this._data;
+    const traffic = this.router;
 
     if (form.username === '') {
       alert('Username required.');
@@ -35,6 +48,8 @@ export class CreateAccountComponent implements OnInit {
               name: form.name,
               password: form.password
             });
+            tempData.changeCurrentUser(newUser);
+            traffic.navigate(['/']);
           }
         }
       });
