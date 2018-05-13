@@ -4,21 +4,31 @@
 		<h1>Help A Homie Out</h1>
 
 		<h3>Create Account</h3>
-		<form #f="ngForm" (ngSubmit)="writeUserData()" class="ui form">
-			Username: <input type="text" name="username">
-			<br>
-			Name: <input type="text" name="name">
-			<br>
-			Favorite Foods: <input type="text" name="favoritefoods">
-			<br>
-			Picture URL: <input type="text" name="urlPic">
-			<br>
-			Email: <input type="text" name="email">
-			<br>
-			Password: <input type="password" name="password">
-			<br> 
-			Confirm Password: <input type="password" name="password2">
-			<br>
+		
+		<form #f="ngForm" (ngSubmit)="onSubmit(f.value)" class="ui form">
+			<div class="field">
+				<label for="usernameInput">User Name: </label>
+				<input type="text" id="usernameInput" placeholder="User" name="username" ngModel>
+				<br>
+				<label for="nameInput">Name: </label>
+				<input type="text" id="nameInput" placeholder="Name" name="name" ngModel>
+				<br>
+				<label for="favoritefoodsInput">Favorite Foods: </label>
+				<input type="text" id="favoritefoodsInput" placeholder="Favorite Foods" name="favoritefoods" ngModel>
+				<br>
+				<label for="urlPicInput">Picture URL: </label>
+				<input type="text" id="urlPicInput" placeholder="http://www.catpics.com/kitten.png" name="urlPic" ngModel>
+				<br>
+				<label for="emailInput">Email: </label>
+				<input type="text" id="emailInput" placeholder="you@site.com" name="email" ngModel>
+				<br>
+				<label for="passwordInput">Password: </label>
+				<input type="password" id="passwordInput" name="password" ngModel>
+				<br>
+				<label for="password2Input">Confirm Password: </label>
+				<input type="password" id="password2Input" name="password2" ngModel>
+			</div>
+			<!-- <div [innerHtml]="htmlVariable"></div> -->
 			<button type="submit" class="ui button">Create</button>
 		</form>
 	</div>

@@ -1,6 +1,7 @@
 import {DataService} from '../services/data.service';
 import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase} from 'angularfire2/database';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-create-account',
@@ -13,16 +14,16 @@ export class CreateAccountComponent implements OnInit {
 
   ngOnInit() {
   }
-  
- writeUserData() {
-  this.db.database.ref('users/' + 'newGuy').set({
-    email: 'guy@new.nu',
-    favfoods: 'new foods',
-    idUrl: 'http://www.imagekit.com/i/new_img42e.png',
-    name: 'Guy New',
-    password: 'newbie'
-  });
-}
+
+  onSubmit(form: any): void {
+    this.db.database.ref('users/' + form.username).set({
+      email: form.email,
+      favfoods: form.favoritefoods,
+      idUrl: form.urlPic,
+      name: form.name,
+      password: form.password
+    });
+  }
 
 
 }

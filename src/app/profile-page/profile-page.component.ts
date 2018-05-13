@@ -31,8 +31,7 @@ export class ProfilePageComponent implements OnInit {
       this.user.favFoods = x.favfoods
       this.user.idUrl = x.idUrl
       this.user.password = x.password
-      console.log("[DEBUG]" + this.getProfile('NAME OUTPUT: ' + x.name));
-    }, error => console.log('ERRROR'));
+    });
   }
   getProfile(listPath): Observable<any> {
     return this.db.object(listPath).valueChanges();
